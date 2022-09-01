@@ -3,7 +3,7 @@
 # https://github.com/ericfreese/zsh-cwd-history
 # v0.2.1
 # Copyright (c) 2016 Eric Freese
-# 
+#
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
 # files (the "Software"), to deal in the Software without
@@ -12,10 +12,10 @@
 # copies of the Software, and to permit persons to whom the
 # Software is furnished to do so, subject to the following
 # conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 # OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,7 +40,7 @@ ZSH_CWD_HISTORY_SHOW_CHPWD_MSG=false
 # Echo the name of the history file to use for current working dir
 # Uses the md5 hash of the absolute path
 _zsh_cwd_history_histfile_for_cwd() {
-	echo "$ZSH_CWD_HISTORY_DIR/.hist-$(echo "${PWD:A}" | md5 -q)"
+	echo "$ZSH_CWD_HISTORY_DIR/.hist-$(echo "${PWD:A}" | md5um --quiet)"
 }
 
 # Switch to a new history file, writing to the old one
